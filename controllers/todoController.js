@@ -14,7 +14,7 @@ module.exports.adicionarTarefa = async(req,res)=>{
 
 module.exports.carregarTarefas = async(req,res)=>{
     try {
-        const tarefas = await Todo.find().exec();
+        const tarefas = await Todo.find().sort({_id:-1}).exec();
         res.json(tarefas);
     } catch (error) {
         console.error(error);
