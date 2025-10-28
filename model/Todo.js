@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
 const todoSchema = new mongoose.Schema({
-    tarefa:{
+    descricao:{
         type:String,
         required:true,
+    },
+    data:{
+        type:Date,
+        default: Date.now
     }    
 });
 
