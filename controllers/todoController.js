@@ -1,10 +1,10 @@
 const Todo = require('../model/Todo');
 
 module.exports.adicionarTarefa = async(req,res)=>{
-    const {tarefa} = req.body;
+    const {descricao, data} = req.body;
 
     try {
-        const novaTarefa = new Todo({tarefa})
+        const novaTarefa = new Todo({descricao, data})
         await novaTarefa.save();
         res.status(201).json({msg:'Tarefa cadastrada com sucesso'});
     } catch (error) {
